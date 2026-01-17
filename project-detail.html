@@ -159,7 +159,10 @@
     <header>
         <nav>
             <div class="logo"><a href="index.html">Santhosh.HL</a></div>
-            <div class="nav-menu">
+            <div class="hamburger" id="hamburger">
+                <i class='bx bx-menu'></i>
+            </div>
+            <div class="nav-menu" id="nav-menu">
                 <ul>
                     <li><a href="index.html#home">Home</a></li>
                     <li><a href="index.html#projects">Case Studies</a></li>
@@ -338,6 +341,24 @@
                 </div>
             </div>
         `;
+    </script>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('#nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
     </script>
 </body>
 

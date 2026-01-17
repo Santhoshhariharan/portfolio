@@ -115,6 +115,13 @@ nav {
   -webkit-text-fill-color: transparent;
 }
 
+.hamburger {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--text-secondary);
+}
+
 .nav-menu {
   display: flex;
   align-items: center;
@@ -794,21 +801,47 @@ footer {
 
 @media (max-width: 768px) {
   nav {
-    flex-direction: column;
+    flex-direction: row;
     gap: 15px;
     padding: 20px 5% !important;
   }
 
+  .hamburger {
+    display: block;
+  }
+
   .nav-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
     width: 100%;
-    justify-content: center;
-    flex-wrap: wrap;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--glass-border);
+    flex-direction: column;
+    padding: 20px 5%;
+    gap: 15px;
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .hamburger.active i:before {
+    content: "\eb9a"; /* bx-x icon */
   }
 
   .nav-menu ul {
-    gap: 12px;
+    flex-direction: column;
+    gap: 15px;
     width: 100%;
-    justify-content: center;
+    align-items: center;
+  }
+
+  .nav-menu ul li {
+    width: 100%;
+    text-align: center;
   }
 
   .nav-resume-btn {
