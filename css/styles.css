@@ -145,6 +145,7 @@ nav {
 
 .nav-resume-btn {
   margin-left: 30px;
+  color: white !important;
 }
 
 /* Hero Section 2026 Styles */
@@ -397,6 +398,8 @@ nav {
   gap: 25px;
   position: relative;
   box-shadow: var(--shadow-sm);
+  min-height: 400px;
+  width: 350px;
 }
 
 .agent-card:hover {
@@ -888,6 +891,7 @@ footer {
   .case-section,
   .stack-category {
     padding: 30px;
+    width: 100%;
   }
 
   .hero-container {
