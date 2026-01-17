@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Agent Details | Santhosh HL</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        .detail-container {
+            padding-top: 120px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent-primary);
+            margin-bottom: 30px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .agent-detail-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .agent-detail-icon {
+            font-size: 48px;
+            color: var(--accent-primary);
+            background: var(--bg-secondary);
+            padding: 20px;
+            border-radius: 20px;
+            border: 1px solid var(--glass-border);
+        }
+
+        .agent-detail-title h1 {
+            font-size: 48px;
+            margin-bottom: 5px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 800;
+        }
+
+        .agent-detail-title span {
+            color: var(--accent-secondary);
+            font-weight: 800;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .detail-section {
+            background: #fff;
+            border: 1px solid var(--glass-border);
+            padding: 50px;
+            border-radius: 40px;
+            margin-bottom: 40px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .detail-section h2 {
+            font-size: 28px;
+            margin-bottom: 25px;
+            color: var(--text-primary);
+            border-left: 6px solid var(--accent-primary);
+            padding-left: 20px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .detail-section p {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        .workflow-step {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .step-num {
+            min-width: 40px;
+            height: 40px;
+            background: var(--gradient-main);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 16px;
+            color: #fff;
+        }
+
+        .step-content h4 {
+            font-size: 20px;
+            margin-bottom: 8px;
+            color: var(--text-primary);
+            font-weight: 800;
+        }
+
+        .tech-pill {
+            background: var(--bg-secondary);
+            border: 1px solid var(--glass-border);
+            padding: 10px 20px;
+            border-radius: 100px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-secondary);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo"><a href="index.html">Santhosh.HL</a></div>
+            <div class="nav-menu">
+                <ul>
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#agents">AI Agents</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section class="detail-container">
+        <a href="index.html#agents" class="back-btn"><i class='bx bx-left-arrow-alt'></i> Back to Portfolio</a>
+
+        <div id="agent-content">
+            <!-- Content dynamically injected -->
+        </div>
+    </section>
+
+    <script>
+        const agentData = {
+            'orchestrator': {
+                title: 'Multi-Agent Orchestrator',
+                tag: 'n8n + Langchain + OpenRouter',
+                icon: 'bx-brain',
+                description: 'A sophisticated hierarchical agent system developed to manage multiple specialized AI workers. This orchestrator acts as a "brain" that interprets user intent and delegates tasks to the most appropriate sub-agent.',
+                workflow: [
+                    { title: 'Intent Classification', desc: 'Uses LLMs to analyze incoming requests and determine if they relate to communication, scheduling, or content.' },
+                    { title: 'Tool Selection', desc: 'Dynamically selects either the Email Agent, Calendar Agent, or Content Creator Based on the classification.' },
+                    { title: 'Think Tool Routing', desc: 'Implements a verification loop to ensure the sub-agent performed the correct action before responding to the user.' }
+                ],
+                tech: ['n8n', 'Langchain Agent Node', 'OpenRouter (Claude 3.7)', 'Recursive Tool Calling']
+            },
+            'rag': {
+                title: 'RAG FAQ Specialist',
+                tag: 'Vector DB + Semantic Search',
+                icon: 'bx-search-alt',
+                description: 'A Retrieval-Augmented Generation system designed to eliminate AI hallucinations. It uses semantic search to find actual company data before generating an answer.',
+                workflow: [
+                    { title: 'Data Ingestion', desc: 'Monitors Google Drive for new documents, extracts text, and chunks it for processing.' },
+                    { title: 'Embedding Generation', desc: 'Converts text chunks into high-dimensional vectors using OpenAI Embeddings.' },
+                    { title: 'Vector Upsert', desc: 'Stores vectors in Pinecone for lightning-fast semantic retrieval.' },
+                    { title: 'Contextual Response', desc: 'Retrieves the top 3 most relevant facts to the user query and provides a sourced answer.' }
+                ],
+                tech: ['Pinecone', 'OpenAI Embeddings', 'n8n Langchain Nodes', 'Google Drive Trigger']
+            },
+            'creative': {
+                title: 'AI Content Producer',
+                tag: 'Runway + Vision LLM',
+                icon: 'bx-movie-play',
+                description: 'A fully automated marketing materials engine. It transforms raw product data into professional studio photography and elegant marketing videos.',
+                workflow: [
+                    { title: 'Photography Prompting', desc: 'A specialized prompt engineer agent converts descriptions into photography-standard prompts.' },
+                    { title: 'Image Generation', desc: 'Uses OpenAI DALL-E or Stable Diffusion to create high-end studio product shots.' },
+                    { title: 'Video Synthesis', desc: 'Hooks into RunwayML Gen-3 API to animate the static image into a professional 3D turntable rotation video.' }
+                ],
+                tech: ['RunwayML API', 'OpenAI Vision', 'HTTP Request Flow', 'File Transformation']
+            },
+            'analyst': {
+                title: 'Technical Analyst Agent',
+                tag: 'Stock Analysis + Telegram',
+                icon: 'bx-trending-up',
+                description: 'An AI financial analyst that monitors markets and provides real-time technical analysis reports directly to a Telegram bot.',
+                workflow: [
+                    { title: 'Ticker Identification', desc: 'Identifies stock tickers and corresponding exchanges from natural language input.' },
+                    { title: 'Chart Extraction', desc: 'Integrates with Chart-Img API to pull high-resolution TradingView charts with MACD and RSI indicators.' },
+                    { title: 'Vision Analysis', desc: 'The AI uses its vision capabilities to "see" the chart patterns, support levels, and momentum trends.' }
+                ],
+                tech: ['Telegram Bot API', 'Vision LLMs', 'TradingView Integration', 'Financial Data APIs']
+            },
+            'scraping': {
+                title: 'Web Intelligence Agent',
+                tag: 'Firecrawl + Structured Data',
+                icon: 'bx-data',
+                description: 'A high-speed data extraction agent that can turn any website into a clean, structured JSON database for lead generation and market research.',
+                workflow: [
+                    { title: 'Crawl Coordination', desc: 'Uses Firecrawl to bypass bot detection and crawl entire domains deeply.' },
+                    { title: 'Structured Extraction', desc: 'Applies LLM-based extraction templates to find specific data like quotes, prices, or contact info.' },
+                    { title: 'Sync Processing', desc: 'Integrates with Apify for specific platform scraping (Google Maps, LinkedIn) when needed.' }
+                ],
+                tech: ['Firecrawl API', 'Apify Actors', 'Structured Output Parsing', 'JSON Schema']
+            },
+            'invoice': {
+                title: 'Financial Operations Agent',
+                tag: 'OCR + Database Automation',
+                icon: 'bx-file',
+                description: 'Streamlining business finance by automating the tedious task of manual invoice entry and tracking.',
+                workflow: [
+                    { title: 'Automatic Retrieval', desc: 'Detects new invoices arriving in a watched Google Drive folder or email inbox.' },
+                    { title: 'OCR Extraction', desc: 'Extracts line items, tax IDs, dates, and amounts using Google Gemini Vision.' },
+                    { title: 'System Sync', desc: 'Automatically populates Google Sheets or Supabase databases and notifies the accounting team via Gmail.' }
+                ],
+                tech: ['Google Gemini Pro', 'n8n OCR Nodes', 'Google Sheets API', 'Postgres/Supabase']
+            },
+            'newsletter': {
+                title: 'AI Newsletter Master',
+                tag: 'n8n + Perplexity + ConvertKit',
+                icon: 'bx-news',
+                description: 'A fully autonomous newsletter factory that scrapes top AI news, researches them deeply using Perplexity, generates high-quality copy, and drafts broadcasts in ConvertKit.',
+                workflow: [
+                    { title: 'Aggregate News', desc: 'Scrapes top news from various AI newsletters and sources via Gmail.' },
+                    { title: 'AI Filtering', desc: 'GPT-4o selects the top 5 most revolutionary news points for a non-technical audience.' },
+                    { title: 'Deep Research', desc: 'Perplexity AI researches each topic and retrieves reference links for internal citations.' },
+                    { title: 'Distribution', desc: 'Claude 3.5 Sonnet writes the newsletter in HTML, which is then drafted into ConvertKit.' }
+                ],
+                tech: ['n8n', 'GPT-4o', 'Claude 3.5 Sonnet', 'Perplexity API', 'ConvertKit API']
+            },
+            'linkedin': {
+                title: 'LinkedIn Content Multiplier',
+                tag: 'Notion + AI Assistant + LinkedIn API',
+                icon: 'bx-link-external',
+                description: 'An automation that pulls scheduled content from Notion, reformats it for high engagement using AI, and automatically publishes it to LinkedIn with images.',
+                workflow: [
+                    { title: 'Notion Retrieval', desc: 'Monitor a Notion database for pages scheduled for today.' },
+                    { title: 'AI Reformatting', desc: 'Uses OpenAI Assistants to re-write content with better paragraph breaks and engagement hooks.' },
+                    { title: 'Automated Posting', desc: 'Fetches images and publishes directly to LinkedIn, then updates Notion status to "Done".' }
+                ],
+                tech: ['n8n', 'Notion API', 'OpenAI Assistant', 'LinkedIn API']
+            },
+            'blog_auto': {
+                title: 'Autonomous Web Publisher',
+                tag: 'Google Sheets + WordPress + DALL-E 3',
+                icon: 'bx-edit',
+                description: 'A sophisticated blog engine that plans, researches, writes, and publishes high-quality WordPress articles complete with AI-generated featured images.',
+                workflow: [
+                    { title: 'Topic Discovery', desc: 'Pulls search phrases and styles from a Google Sheets queue.' },
+                    { title: 'Research & Write', desc: 'Tavily researches each section while GPT-4o writes content tailored to the audience.' },
+                    { title: 'Visual Identity', desc: 'Generates high-end photographic cover images via DALL-E 3.' },
+                    { title: 'WP Sync', desc: 'Uploads media, sets metadata, and creates WordPress drafts automatically.' }
+                ],
+                tech: ['Tavily API', 'GPT-4o', 'DALL-E 3', 'WordPress API', 'Google Sheets']
+            },
+            'seo_clusters': {
+                title: 'SEO Keyword Strategist',
+                tag: 'Perplexity + o1-mini + Internal Linking',
+                icon: 'bx-stats',
+                description: 'Advanced SEO workflow that takes keyword clusters and generates 2500+ word "world-class" blog posts with automated internal linking for maximum ranking power.',
+                workflow: [
+                    { title: 'Cluster Ingestion', desc: 'Grabs new keyword clusters and search intent from Google Sheets.' },
+                    { title: 'Deep Planning', desc: 'Uses o1-mini and Perplexity for deep technical planning and research.' },
+                    { title: 'Link Optimization', desc: 'Automatically finds internal linking opportunities from previous posts.' },
+                    { title: 'SEO Metadata', desc: 'Generates optimized slugs, titles, and meta descriptions for the blog.' }
+                ],
+                tech: ['o1-mini', 'Claude 3.5 Sonnet', 'Perplexity API', 'n8n Set Nodes']
+            },
+            'seo_trends': {
+                title: 'Trend-Jack SEO Agent',
+                tag: 'Google Trends + DeepSeek-R1 + WordPress',
+                icon: 'bx-trending-up',
+                description: 'An agent that monitors Google Trends for rising AI topics, analyzes them with DeepSeek-R1, and writes timely news-style blog posts to capture traffic spikes.',
+                workflow: [
+                    { title: 'Trend Monitoring', desc: 'Uses SerpAPI to monitor Google Trends for rising queries and search volume.' },
+                    { title: 'DeepSeek Analysis', desc: 'DeepSeek-R1 identifies the most relevant trend for the brand.' },
+                    { title: 'News Writing', desc: 'Claude writes high-quality, news-style posts (1500+ words) based on trendy research.' },
+                    { title: 'Rapid Publishing', desc: 'Drafts the post on WordPress with trendy cover images and metadata.' }
+                ],
+                tech: ['DeepSeek-R1', 'Claude 3.5 Sonnet', 'SerpAPI (Trends)', 'WordPress API']
+            },
+            'seo_audit': {
+                title: 'Real-time SEO Auditor',
+                tag: 'Ollama (Gemma) + Sitemap Scraping',
+                icon: 'bx-check-shield',
+                description: 'A technical SEO tool that crawls sitemaps, checks page statuses, and uses local LLMs (Ollama) to perform site audits for best practices.',
+                workflow: [
+                    { title: 'Crawl & Fetch', desc: 'Pulls sitemaps and fetches HTML from various site pages in seconds.' },
+                    { title: 'Tag Extraction', desc: 'Uses custom JS to extract title, meta, and H1 tags from the HTML source.' },
+                    { title: 'Local AI Audit', desc: 'Sends HTML to a local Ollama instance (Gemma) for private SEO analysis.' },
+                    { title: 'Health Check', desc: 'Verifies HTTP status codes and sitemap integrity for overall site health.' }
+                ],
+                tech: ['Ollama (Gemma)', 'n8n HTTP Node', 'JavaScript Function Node', 'Sitemap Parser']
+            }
+        };
+
+        const params = new URLSearchParams(window.location.search);
+        const agentId = params.get('id');
+        const data = agentData[agentId] || agentData['orchestrator'];
+
+        const contentHtml = `
+            <div class="agent-detail-header">
+                <i class='bx ${data.icon} agent-detail-icon'></i>
+                <div class="agent-detail-title">
+                    <span>${data.tag}</span>
+                    <h1>${data.title}</h1>
+                </div>
+            </div>
+
+            <div class="detail-section">
+                <h2>Project Concept</h2>
+                <p>${data.description}</p>
+            </div>
+
+            <div class="detail-section">
+                <h2>How it Works</h2>
+                <div class="workflow-steps">
+                    ${data.workflow.map((step, index) => `
+                        <div class="workflow-step">
+                            <div class="step-num">${index + 1}</div>
+                            <div class="step-content">
+                                <h4>${step.title}</h4>
+                                <p>${step.desc}</p>
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+            </div>
+
+            <div class="detail-section">
+                <h2>Technology Stack</h2>
+                <div class="tech-stack-pills">
+                    ${data.tech.map(t => `<div class="tech-pill">${t}</div>`).join('')}
+                </div>
+            </div>
+        `;
+        document.getElementById('agent-content').innerHTML = contentHtml;
+    </script>
+</body>
+
+</html>

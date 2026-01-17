@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details | Santhosh HL</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        .detail-container {
+            padding-top: 150px;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding-bottom: 100px;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--accent-primary);
+            margin-bottom: 40px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 14px;
+        }
+
+        .project-header {
+            margin-bottom: 60px;
+        }
+
+        .project-category {
+            color: var(--accent-secondary);
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 14px;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .project-header h1 {
+            font-size: clamp(32px, 5vw, 56px);
+            margin-bottom: 25px;
+            letter-spacing: -2px;
+        }
+
+        .project-meta-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            padding: 30px;
+            background: var(--bg-secondary);
+            border-radius: 30px;
+            border: 1px solid var(--glass-border);
+        }
+
+        .meta-item h4 {
+            font-size: 12px;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .meta-item p {
+            font-weight: 700;
+            color: var(--text-primary);
+            font-size: 18px;
+        }
+
+        .project-body {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+
+        .case-section {
+            background: #fff;
+            border: 1px solid var(--glass-border);
+            padding: 50px;
+            border-radius: 40px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .case-section h2 {
+            font-size: 28px;
+            margin-bottom: 25px;
+            color: var(--text-primary);
+            border-left: 6px solid var(--accent-primary);
+            padding-left: 20px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 800;
+        }
+
+        .case-section p {
+            color: var(--text-secondary);
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .impact-card {
+            background: var(--bg-secondary);
+            padding: 25px;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .impact-value {
+            display: block;
+            font-size: 32px;
+            font-weight: 900;
+            color: var(--accent-secondary);
+            margin-bottom: 5px;
+        }
+
+        .impact-label {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--text-dim);
+            text-transform: uppercase;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .tech-tag {
+            background: var(--accent-soft);
+            color: var(--accent-primary);
+            padding: 10px 20px;
+            border-radius: 100px;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        @media (max-width: 768px) {
+            .case-section {
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo"><a href="index.html">Santhosh.HL</a></div>
+            <div class="nav-menu">
+                <ul>
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#projects">Case Studies</a></li>
+                    <li><a href="index.html#agents">AI Agents</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="detail-container">
+        <a href="index.html#projects" class="back-btn"><i class='bx bx-left-arrow-alt'></i> Back to Portfolio</a>
+
+        <div id="project-content">
+            <!-- Dynamic Content -->
+        </div>
+    </main>
+
+    <script>
+        const projectData = {
+            'geo-case-study': {
+                category: 'AI & Generative Engine Optimization',
+                title: 'Dominating AI Search: +35% Lift in Non-Traditional Traffic',
+                vitals: {
+                    client: 'Multi-Brand Web Properties',
+                    duration: '6 Months',
+                    role: 'Lead SEO Strategist',
+                    tools: 'GSC, Perplexity API, GPT-4o'
+                },
+                image: 'images/gsc-growth.png',
+                problem: 'With the rise of Search Generative Experience (SGE), traditional organic traffic was plateauing. The client needed to shift focus from blue links to AI Answer Engines like ChatGPT and Perplexity to remain visible.',
+                strategy: 'We implemented an "Answer Engine Optimization" (AEO) framework. This involved transforming long-form content into modular, factual blocks that AI models can easily ingest and cite.',
+                actions: [
+                    'Identified high-intent question clusters using o1-preview for semantic mapping.',
+                    'Implemented complex FAQ and Organization Schema to define the brand as a verified entity.',
+                    'Optimized for "First Person Expert Narratives" to satisfy the latest E-E-A-T requirements, providing original research not found in AI training data.'
+                ],
+                results: {
+                    '35%': 'Organic Traffic Lift',
+                    '200+': 'AI Snippets Won',
+                    '15%': 'Direct Brand Search Growth'
+                },
+                tech: ['Advanced Schema', 'Python Automation', 'Semantic SEO', 'Entity Mapping']
+            },
+            'tech-seo-audit': {
+                category: 'Modern Technical SEO',
+                title: 'Infrastructure Overhaul: Solving the JavaScript Rendering Puzzle',
+                vitals: {
+                    client: 'Enterprise SaaS Provider',
+                    duration: '3 Months',
+                    role: 'Technical SEO Auditor',
+                    tools: 'Screaming Frog, GSC, PageSpeed Insights'
+                },
+                image: 'images/lighthouse-audit.png',
+                problem: 'A heavy JavaScript framework was causing vital content to remain un-indexed. Core Web Vitals were failing, specifically the new INP (Interaction to Next Paint) metric, impacting mobile rankings.',
+                strategy: 'Conducted a deep-dive rendering audit to identify bottlenecks in the DOM construction. Implemented a server-side rendering (SSR) hybrid model for key landing pages.',
+                actions: [
+                    'Used Screaming Frog with JS rendering to map out content "blind spots".',
+                    'Optimized critical rendering paths and debloated heavy script bundles to improve INP by 40%.',
+                    'Fixed recursive canonical loops that were wasting crawl budget across 5,000+ pages.'
+                ],
+                results: [
+                    { val: '40%', label: 'INP Improvement' },
+                    { val: '98/100', label: 'Lighthouse Score' },
+                    { val: '60%', label: 'Indexation Rate Increase' }
+                ],
+                tech: ['JavaScript SEO', 'Core Web Vitals', 'SSR Implementation', 'Crawl Budget Ops'],
+                isListResult: true
+            },
+            'content-velocity': {
+                category: 'Automated Content Ecosystems',
+                title: 'Scaling Authority: From 10 to 200+ Articles Per Month',
+                vitals: {
+                    client: 'B2B Tech Publisher',
+                    duration: '4 Months',
+                    role: 'AI Orchestrator',
+                    tools: 'n8n, DALL-E 3, WordPress API'
+                },
+                image: 'images/velocity-dashboard.png',
+                problem: 'The editorial team was limited by manual research and writing speed, capped at 10 high-quality articles per month. They needed to scale production without sacrificing E-E-A-T or brand voice.',
+                strategy: 'Built a human-in-the-loop (HITL) AI factory. The system handled research, drafting, and image generation, while humans focused on final strategic editing and fact-checking.',
+                actions: [
+                    'Developed a custom n8n agent that pulls search intent from GSC and builds semantic content briefs.',
+                    'Integrated GPT-4o for drafting with "Brand Voice Enforcer" prompts to ensure style consistency.',
+                    'Automated DALL-E 3 image generation for unique, non-stock cover visuals for every post.'
+                ],
+                results: {
+                    '20x': 'Production Speed Increase',
+                    '60%': 'Manual Labor Reduction',
+                    '45%': 'Keyword Coverage Growth'
+                },
+                tech: ['n8n Orchestration', 'WordPress Automation', 'Image APIs', 'Voice Modeling']
+            }
+        };
+
+        const params = new URLSearchParams(window.location.search);
+        const projectId = params.get('id');
+        const data = projectData[projectId] || projectData['geo-case-study'];
+
+        const contentDiv = document.getElementById('project-content');
+
+        let actionsHtml = '';
+        if (Array.isArray(data.actions)) {
+            actionsHtml = '<ul>' + data.actions.map(a => `<li style="margin-bottom: 12px;">${a}</li>`).join('') + '</ul>';
+        }
+
+        let resultsHtml = '';
+        if (data.isListResult) {
+            resultsHtml = data.results.map(r => `
+                <div class="impact-card">
+                    <span class="impact-value">${r.val}</span>
+                    <span class="impact-label">${r.label}</span>
+                </div>
+            `).join('');
+        } else {
+            resultsHtml = Object.entries(data.results).map(([val, label]) => `
+                <div class="impact-card">
+                    <span class="impact-value">${val}</span>
+                    <span class="impact-label">${label}</span>
+                </div>
+            `).join('');
+        }
+
+        contentDiv.innerHTML = `
+            <div class="project-header">
+                <span class="project-category">${data.category}</span>
+                <h1>${data.title}</h1>
+                <div class="project-meta-grid">
+                    <div class="meta-item">
+                        <h4>Client / Project</h4>
+                        <p>${data.vitals.client}</p>
+                    </div>
+                    <div class="meta-item">
+                        <h4>Duration</h4>
+                        <p>${data.vitals.duration}</p>
+                    </div>
+                    <div class="meta-item">
+                        <h4>My Role</h4>
+                        <p>${data.vitals.role}</p>
+                    </div>
+                    <div class="meta-item">
+                        <h4>Core Stack</h4>
+                        <p>${data.vitals.tools}</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-body">
+                <div class="case-section">
+                    <h2>01. The Problem</h2>
+                    <p>${data.problem}</p>
+                </div>
+
+                <div class="case-section">
+                    <h2>02. Strategic Approach</h2>
+                    <p>${data.strategy}</p>
+                </div>
+
+                <div class="case-section">
+                    <h2>03. Execution & Actions</h2>
+                    <div style="color: var(--text-secondary); font-size: 18px; line-height: 1.8;">
+                        ${actionsHtml}
+                    </div>
+                </div>
+
+                <div class="case-section">
+                    <h2>04. Visual Evidence & Impact</h2>
+                    <div style="margin-bottom: 40px; border-radius: 24px; overflow: hidden; border: 1px solid var(--glass-border); box-shadow: var(--shadow-md);">
+                        <img src="${data.image}" alt="Performance Evidence" style="width: 100%; display: block;">
+                    </div>
+                    <div class="impact-grid">
+                        ${resultsHtml}
+                    </div>
+                    <div class="tech-tags" style="margin-top: 40px;">
+                        ${data.tech.map(t => `<span class="tech-tag">${t}</span>`).join('')}
+                    </div>
+                </div>
+            </div>
+        `;
+    </script>
+</body>
+
+</html>
